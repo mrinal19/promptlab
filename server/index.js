@@ -52,8 +52,6 @@ app.post('/api/labels', (req, res) => {
   res.status(201).json(db.labels.create(req.body));
 });
 
-const path = require("path");
-
 // Serve frontend in production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/dist")));
