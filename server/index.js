@@ -54,20 +54,13 @@ app.post('/api/labels', (req, res) => {
   res.status(201).json(db.labels.create(req.body));
 });
 
-// ── STATS ──
-app.get('/api/stats', (req, res) => res.json(db.stats.get()));
-
-// ── SERVE REACT IN PRODUCTION ──
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/dist')));
-  app.get('*', (req, res) =>
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'))
-  );
-}
 
 app.listen(PORT, () => console.log(`🚀 PromptLab API: http://localhost:${PORT}`));
 
 const path = require("path");
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/dist")));
