@@ -55,9 +55,6 @@ app.post('/api/labels', (req, res) => {
 });
 
 
-app.listen(PORT, () => console.log(`🚀 PromptLab API: http://localhost:${PORT}`));
-
-const path = require("path");
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
