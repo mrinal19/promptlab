@@ -1,8 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "/api"
+  baseURL: import.meta.env.VITE_API_URL
 });
+
+export default API;
 
 export const evaluationsApi = {
   getAll: (params = {}) => api.get('/evaluations', { params }).then(r => r.data),
