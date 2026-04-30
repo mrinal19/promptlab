@@ -23,4 +23,3 @@ export const statsApi = {
   get: () => api.get('/stats').then(r => r.data),
 };
 
-export default api;
