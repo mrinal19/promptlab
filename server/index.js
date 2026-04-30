@@ -4,8 +4,6 @@ const path = require('path');
 const db = require('./db');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-
 app.use(cors());
 app.use(express.json());
 
@@ -54,11 +52,9 @@ app.post('/api/labels', (req, res) => {
   res.status(201).json(db.labels.create(req.body));
 });
 
+const path = require("path");
 
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on ${PORT}`));
-
+// Serve frontend in production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/dist")));
 
@@ -66,3 +62,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
   });
 }
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+
