@@ -1,4 +1,4 @@
-# PromptLab 🚀 Live Demo = https://promptlab-two.vercel.app/evaluate
+# PromptLab 🚀
 
 ### LLM Evaluation & Annotation Platform
 
