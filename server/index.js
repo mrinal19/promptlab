@@ -52,10 +52,13 @@ app.post('/api/labels', (req, res) => {
   res.status(201).json(db.labels.create(req.body));
 });
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
 
-// Start server
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
+
